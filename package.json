@@ -19,6 +19,7 @@
     "express": "^4.15.3",
     "express-passport-logout": "^0.1.0",
     "fs": "0.0.1-security",
+    "heroku": "^7.53.1",
     "http": "0.0.1-security",
     "https": "^1.0.0",
     "jsonwebtoken": "^7.4.1",
