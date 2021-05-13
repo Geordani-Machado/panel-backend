@@ -65,13 +65,7 @@ tokensCleanUp.start();
 
 const PORT = process.env.PORT;
 
-
-http.createServer({
-}, app)
-    .listen(PORT, function() {
-      console.log('App listening on port ' + PORT + '! Go to http://localhost:' + PORT + '/');
-    });
-
+app.listen(process.env.PORT || 5100);
 
 /**
  * @param {int} req req.
