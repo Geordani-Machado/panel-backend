@@ -65,7 +65,7 @@ tokensCleanUp.start();
 
 const PORT = process.env.PORT;
 
-app.listen(process.env.PORT || 5100);
+app.listen(process.env.PORT || +PORT);
 
 /**
  * @param {int} req req.
