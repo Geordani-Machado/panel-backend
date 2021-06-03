@@ -14,6 +14,11 @@ const UserSchema = new mongoose.Schema({
      type: String,
      required: false,
   },
+  saldo: {
+     type: String,
+     required: false,
+    default: '20,00',
+  },
   password: {
     type: String,
     required: true,
