@@ -28,12 +28,12 @@ router.post('/all', reqAuth, function(req, res) {
 });
 
 router.post('/edit', reqAuth, function(req, res) {
-  const {userID, name, email, whatsNumber} = req.body;
+  const {userID, name, email, whatsNumber , braipCBSB} = req.body;
 
   User.find({_id: userID}).then((user) => {
     if (user.length == 1) {
       const query = {_id: user[0]._id};
-      const newvalues = {$set: {name: name, email: email, whatsNumber}};
+      const newvalues = {$set: {name: name, email: email, whatsNumber: whatsNumber, braipCBSB: braipCBSB }};
       User.updateOne(query, newvalues, function(err, cb) {
         if (err) {
           // eslint-disable-next-line max-len
