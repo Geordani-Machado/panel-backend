@@ -28,16 +28,26 @@ router.post('/all', reqAuth, function(req, res) {
 });
 
 router.post('/edit', reqAuth, function(req, res) {
-  const {userID, name, email, whatsNumber , braipCBSB} = req.body;
+  const {userID, name, email, whatsNumber , 
+    //<-integração com a Braip -> 
+    braipCBSB, braipCBSP, 
+    braipBG01, braipBG02, braipBG03, braipBG04 , braipBG05 , braipBG06
+   } = req.body;
 
   User.find({_id: userID}).then((user) => {
     if (user.length == 1) {
       const query = {_id: user[0]._id};
-      const newvalues = {$set: {name: name, email: email, whatsNumber: whatsNumber, braipCBSB: braipCBSB }};
+      const newvalues =
+       {$set: {name: name, email: email, whatsNumber: whatsNumber,
+        //<- INTEGRAÇÃO COM A BRAIP->
+         braipCBSB: braipCBSB , braipCBSP: braipCBSP, 
+         braipBG01: braipBG01, braipBG02: braipBG02 , braipBG03: braipBG03 ,
+         braipBG04: braipBG04 , braipBG05: braipBG05, braipBG06 : braipBG06}};
       User.updateOne(query, newvalues, function(err, cb) {
         if (err) {
           // eslint-disable-next-line max-len
-          res.json({success: false, msg: 'There was an error. Please contract the administator'});
+          res.json({success: false, msg: 
+            'OPS! TIVEMOS UM ERRO. POR FAVOR CONTATE UM MEMBRO DA NOSSA EQUIPE E INFORME O MESMO, OBRIGADO.'});
         }
         res.json({success: true});
       });
