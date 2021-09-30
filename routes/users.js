@@ -123,7 +123,7 @@ router.post('/forgotpassword', (req, res) => {
       if (process.env.DEMO != 'yes') {
         // send mail with defined transport object
         transporter.sendMail({
-          from: '"Creative Tim" <' + smtpConf.auth.user + '>', // sender address
+          from: '"Zoe Inc" <' + smtpConf.auth.user + '>', // sender address
           to: email, // list of receivers
           subject: 'Creative Tim Reset Password', // Subject line
           // eslint-disable-next-line max-len
