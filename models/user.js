@@ -1,4 +1,3 @@
-
 const mongoose = require('mongoose');
 
 const UserSchema = new mongoose.Schema({
@@ -99,6 +98,38 @@ const UserSchema = new mongoose.Schema({
   hotmartBG06: {
     type: String,
     default: 'Olá [ClientNome], Hoje é o ultimo dia para pagar o boleto [boleto], e aproveitar essa super oportunidade de 10% somente para o dia de hoje!',
+  },
+  wooCBSB: {
+    type: String,
+    default: 'Olá [ClientNome], Hoje é o ultimo dia para pagar o boleto [boleto], e aproveitar essa super oportunidade de 10% somente para o dia de hoje!',
+  },
+  wooCBSP: {
+    type: String,
+    default: 'Olá [ClientNome], Hoje é o ultimo dia para pagar o seu Pix [Pix], e aproveitar essa super oportunidade de 10% somente para o dia de hoje!',
+  },
+  wooBG01: {
+    type: String,
+    default: 'Olá [ClientNome], Boleto dia 01 🥳',
+  },
+  wooBG02: {
+    type: String,
+    default: 'Olá [ClientNome], Boleto dia 02',
+  },
+  wooBG03: {
+    type: String,
+    default: 'Olá [ClientNome], Boleto dia 03',
+  },
+  wooBG04: {
+    type: String,
+    default: 'Olá [ClientNome], Boleto dia 04',
+  },
+  wooBG05: {
+    type: String,
+    default: 'Olá [ClientNome], Boleto dia 05',
+  },
+  wooBG06: {
+    type: String,
+    default: 'Olá [ClientNome], Boleto dia 06',
   },
 });
 
