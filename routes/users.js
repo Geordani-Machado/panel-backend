@@ -12,11 +12,8 @@ const reqAuth = require('../config/safeRoutes').reqAuth;
 const {smtpConf} = require('../config/config');
 // route /admin/users/
 
-router.post('/all', reqAuth, function(req, res) {
+router.post('/all',function(req, res) {
   User.find({}, function(err, users) {
-    if (err) {
-      res.json({success: false});
-    }
     users = users.map(function(item) {
       const x = item;
       x.password = undefined;
@@ -43,6 +40,9 @@ router.post('/edit', reqAuth, function(req, res) {
          braipCBSB: braipCBSB , braipCBSP: braipCBSP, 
          braipBG01: braipBG01, braipBG02: braipBG02 , braipBG03: braipBG03 ,
          braipBG04: braipBG04 , braipBG05: braipBG05, braipBG06 : braipBG06}};
+
+
+
       User.updateOne(query, newvalues, function(err, cb) {
         if (err) {
           // eslint-disable-next-line max-len
@@ -127,7 +127,11 @@ router.post('/forgotpassword', (req, res) => {
           to: email, // list of receivers
           subject: 'Creative Tim Reset Password', // Subject line
           // eslint-disable-next-line max-len
-          html: '<h1>Hey,</h1><br><p>If you want to reset your password, please click on the following link:</p><p><a href="' + 'http://localhost:3000/auth/confirm-password/' + user._id + '">"' + 'http://localhost:3000/auth/confirm-email/' + user._id + + '"</a><br><br>If you did not ask for it, please let us know immediately at <a href="mailto:' + smtpConf.auth.user + '">' + smtpConf.auth.user + '</a></p>', // html body
+          html: '<h1>Hey,</h1><br><p>If you want to reset your password, please click on the following link:</p><p><a href="'
+           + 'http://localhost:3000/auth/confirm-password/' + user._id + '">"' +
+            'http://localhost:3000/auth/confirm-email/' + user._id + + 
+            '"</a><br><br>If you did not ask for it, please let us know immediately at <a href="mailto:' + 
+            smtpConf.auth.user + '">' + smtpConf.auth.user + '</a></p>', // html body
         });
         res.json({success: true});
       }
