@@ -13,10 +13,6 @@ const db = require('./config/keys').mongoURI;
 const CronJob = require('cron').CronJob;
 const crons = require('./config/crons');
 
-var Usuario  = require('./models/usuarios');
-
-
-
 require('dotenv').config();
 
 // Instantiate express
