@@ -1,4 +1,5 @@
-var express     = require('express'); //chamando o pacote express
+var express = require('express')
+var router = express.Router();
 var app         = express(); //definção da nossa aplicação através do express
 var bodyParser  = require('body-parser');  //chamando o pacote body-parser
 var mongoose    = require('mongoose');
@@ -14,13 +15,7 @@ app.use(bodyParser.urlencoded({ extended: true }));
 app.use(bodyParser.json());
 
 /** Definição da porta onde será executada a nossa aplicação */
-var port = process.env.PORT || 8000;
-
-//Rotas da nossa API: 
-//==============================================================
-
-/* Aqui o 'router' irá pegar as instâncias das Rotas do Express */
-var router = express.Router();
+var port = 1000;
 
 /* Middleware para usar em todos os requests enviados para a nossa API- Mensagem Padrão */
 router.use(function(req, res, next) {
@@ -119,3 +114,5 @@ app.use('/api', router);
 //==============================================================
 app.listen(port);
 console.log('Iniciando a aplicação na porta ' + port);
+
+module.exports = router;
