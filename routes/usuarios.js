@@ -1,4 +1,3 @@
-/* Chamada das Packages que iremos precisar para a nossa aplicação */
 var express     = require('express'); //chamando o pacote express
 var app         = express(); //definção da nossa aplicação através do express
 var bodyParser  = require('body-parser');  //chamando o pacote body-parser
@@ -38,8 +37,8 @@ router.route('/usuarios')
 
         //aqui setamos os campos do usuario (que virá do request)
         usuario.nome = req.body.nome;
-        usuario.login = req.body.login;
-        usuario.senha = req.body.senha;
+        usuario.numero = req.body.numero;
+        usuario.empresa = req.body.empresa;
 
         usuario.save(function(error) {
             if(error)
@@ -86,8 +85,8 @@ router.route('/usuarios/:usuario_id')
             
             //Segundo: Diferente do Selecionar Por Id... a resposta será a atribuição do que encontramos na classe modelo:
             usuario.nome = req.body.nome;
-            usuario.login = req.body.login;
-            usuario.senha = req.body.senha;
+            usuario.numero = req.body.numero;
+            usuario.empresa = req.body.empresa;
 
             //Terceiro: Agora que já atualizamos os campos, precisamos salvar essa alteração....
             usuario.save(function(error) {
