@@ -1,4 +1,9 @@
-
+/* Chamada das Packages que iremos precisar para a nossa aplicação */
+var express     = require('express'); //chamando o pacote express
+var app         = express(); //definção da nossa aplicação através do express
+var bodyParser  = require('body-parser');  //chamando o pacote body-parser
+var mongoose    = require('mongoose');
+var Usuario     = require('./app/models/usuario');
 
 mongoose.connect('mongodb://Zoe:pbywk%40mb%23123%23@cluster0-shard-00-01.2qyho.mongodb.net:27017/myFirstDatabase?authSource=admin&replicaSet=atlas-h5kba0-shard-0&readPreference=primary&appname=MongoDB%20Compass&ssl=true'); //via Modulus
 //mongoose.connect('mongodb://localhost/node-api'); //aqui caso queira executar de maneira local usando o MongoDb
