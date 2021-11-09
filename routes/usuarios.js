@@ -15,7 +15,7 @@ app.use(bodyParser.urlencoded({ extended: true }));
 app.use(bodyParser.json());
 
 /** Definição da porta onde será executada a nossa aplicação */
-var port = 1000;
+var port = 8080;
 
 /* Middleware para usar em todos os requests enviados para a nossa API- Mensagem Padrão */
 router.use(function(req, res, next) {
