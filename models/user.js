@@ -11,7 +11,7 @@ const UserSchema = new mongoose.Schema({
   },
   whatsNumber: {
      type: String,
-     required: false,
+     required: true,
   },
   saldo: {
     type: String,
@@ -77,7 +77,7 @@ const UserSchema = new mongoose.Schema({
   },
   hotmartBG01: {
     type: String,
-    default: 'Olá [ClientNome] O boleto [Boleto] foi gerado em nossa loja.',
+    default: 'Olá [ClientNome] O boleto [Boleto] foi gerado em nossa loja teste.',
   },
   hotmartBG02: {
     type: String,
